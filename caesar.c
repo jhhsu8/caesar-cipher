@@ -10,27 +10,22 @@ by shifting each letter by some number of places */
 int key, ascii, index, new_index, new_ascii;
 
 int main(int argc, string argv[]) {
-
     //Accept a number as a command-line argument
     if (argc == 2) {
-
         string input;
         printf("Enter a message: ");
         input = GetString();
 
         for (int i = 0, n = strlen(input); i < n; i++) {
-
             // Extract each character from the message
             ascii = input[i];
 
             // Only encypt alphabets
             if (isalpha(ascii)) {
-
                 // Convert the number to an integer
                 key = atoi(argv[1]);
 
                 if (isupper(ascii)) {
-
                     // Convert each uppercase character into 0 - 25 indexes
                     index = ascii - 65;
 
@@ -41,7 +36,6 @@ int main(int argc, string argv[]) {
                     new_ascii = new_index + 65;
 
                 } else if (islower(ascii)) {
-
                     // Convert each lowercase character into 0 - 25 indexes
                     index = ascii - 97;
 
@@ -53,7 +47,6 @@ int main(int argc, string argv[]) {
                 }
 
             } else {
-
                 // Non-alphabet characters remain unchanged
                 new_ascii = ascii;
             }
